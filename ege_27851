@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int arr [5];
+int count=0;
+  for (int i=210235; i <=210300; i++){
+
+  for (int j=2; j<=i/2;j++) 
+  {
+
+if(count>4)
+   continue;
+
+   if (i%j==0)
+   {
+     arr [count] =j;
+     count++;
+   }
+  } 
+
+if(count==4)
+  {
+    for (int k=0;k<4;k++)
+    cout<<arr [k] << " ";
+   cout << endl;
+  }
+count =0;
+}
+}
