@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main() {
+int max=0;
+int count=0;
+  for (int i=9913; i <=13894; i++){
+
+  if(i%3==0&&i%7==0&&i%4!=0&&i%17!=0&&i%23!=0&&i%42!=0){
+  if (max<i) max=i;
+  count++;
+}}
+cout << count<< max;
+}
