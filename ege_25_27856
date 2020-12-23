@@ -1,0 +1,30 @@
+  
+#include <iostream>
+using namespace std;
+int main() {
+  int arr [9];
+int count=0;
+  for (int i=95632; i <=95650; i++){
+
+  for (int j=1; j<=i;j+=2) 
+  {
+
+if(count>6)
+   continue;
+
+   if (i%j==0)
+   {
+     arr [count] =j;
+     count++;
+   }
+  } 
+
+if(count==6)
+  {
+    for (int k=0;k<6;k++)
+    cout<<arr [k] << " ";
+   cout << endl;
+  }
+count =0;
+}
+}
