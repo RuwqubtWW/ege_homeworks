@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+int a[10000];
+int count =0;
+for (int i =19960; i<=20000;i++)
+{
+  for (int j =2; j<=10000; j++)
+  {
+    if (i%j==0)
+    {
+    a[count]=j;
+    count++;
+    }
+
+  }
+  if (count==2)
+  {
+  for (int k=0;k<2;k++)
+  cout<<a[k]<<' ';
+  cout<<endl;
+  }
+  
+  count=0;
+}
+}
