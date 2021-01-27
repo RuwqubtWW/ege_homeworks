@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+  int x;
+  cin >>x;
+ int counts =0;
+  for (int i=1; i<=int(sqrt(x));i++)
+  {
+    if (x%i==0)
+    counts++;
+  }
+  if (int(sqrt(x))*int(sqrt(x))==x)
+  cout << counts*2-1; else  cout << counts*2;
+}
