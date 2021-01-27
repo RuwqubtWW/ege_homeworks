@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+ 
+ int maxcount =0;
+  int counts =1;
+  int mindel =1000000;
+  int maxdel =0;
+  int mindel1=0;
+  int mindel2=0;
+  for (int i =586132; i<=586430; i++){
+    for (int j =1; j<=586430/2; j++)
+    {
+     if (i%j==0)
+       counts++;
+
+       }
+       if(counts>maxcount) { 
+         maxcount =counts;
+         mindel =i;
+         maxdel =i;
+         }
+         if(counts==maxcount) 
+        maxdel =i;
+         
+  counts=1;
+  
+  
+  
+    for (int j=mindel-1; j>0; j--){
+    if (mindel%j==0) {mindel1=j;break;}
+    }
+    for (int j=maxdel-1; j>0; j--){
+    if (maxdel%j==0) { mindel2=j; break;}
+    }
+    
+  
+
+  
+  }
+  cout <<maxcount<<' '<<mindel<<' '<<mindel1<<endl;
+  cout <<maxcount<<' '<<maxdel<<' '<<mindel2;
+}
