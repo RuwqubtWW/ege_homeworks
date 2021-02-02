@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int arr[100000];
+  int count = 0;
+  for (int i=190061; i <=190080; i++){
+  for (int j =1; j <=99999; j+=2){
+ if (i%j==0){
+   arr[count]=i;
+   count++;
+}
+
+  }
+  if (count==4) {
+    cout << i<< ' '; 
+    for (int k=count; k>0; k--){
+      cout << k << ' ';
+    }
+    cout << endl;
+  }
+  count =0;
+  }
+
+
+
+}
