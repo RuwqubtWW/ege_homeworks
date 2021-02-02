@@ -14,10 +14,10 @@ int main() {
   int count = 0;
    int maxdel =0;
     for (int i=25317; i<=51237; i++){
-for (int j =2; j<=25619; j++)
+for (int j =2; j<=i/2; j++)
 {
 if (del(j)&&(i%j==0))
- {count++; 
+ {count++;
  maxdel=j;
  //cout <<i<<" "<< count<<" "<< maxdel<<endl;
   }
