@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+bool del(int x){
+if (x==2) return 1;
+if (x%2==0) return 0;
+else
+for (int i=3; i<(x/2); i+=2){
+if(x%i==0) return 0;
+}
+return 1;
+}
+int main() {
+  int count = 0;
+   int maxdel =0;
+    for (int i=25317; i<=51237; i++){
+for (int j =2; j<=25619; j++)
+{
+if (del(j)&&(i%j==0))
+ {count++; 
+ maxdel=j;
+ //cout <<i<<" "<< count<<" "<< maxdel<<endl;
+  }
+}
+
+if (count>5) {
+cout << i <<" "<<maxdel<< endl;}
+count =0;
+maxdel=0;
+ }
+
+}
