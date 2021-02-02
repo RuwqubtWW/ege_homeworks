@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int sum(int x)
+{
+int sum =0;
+
+for (int j =1; j <=x; j++){
+ if (x%j==0)
+ sum+=j;
+ }
+  return sum;
+}
+
+
+
+
+int main() {
+
+  for (int i=2; i <=263000; i++){
+ if (sum(sum(i))==i*2)
+ cout << i << endl;
+  }
+
+
+}
