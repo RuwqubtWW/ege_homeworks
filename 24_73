@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    int maxcount =0;
+    int count1 =0;
+    bool check =1;
+    char ch;
+    char chmax;
+
+    ifstream F("C:\\Users\\podli\\Desktop\\Инфа_ЕГЭ\\k8-4.txt");
+  string s;
+  getline( F, s );
+  for (int i=0; i<=s.length();i++){
+  if (s[i]==s[i+1]) {
+        count1++;
+        ch=s[i];
+  }
+  else {
+
+    if (count1>maxcount) {maxcount=count1; chmax=ch;}
+    count1=0;
+  }
+
+  }
+  cout << chmax <<' '<<maxcount;
+    return 0;
+}
