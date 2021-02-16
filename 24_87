@@ -20,7 +20,7 @@ int multy =1;
     for (int j=0; j<10; j++){
     if (s[i]==arr[j]){
         check=1;
-        arr2[count]=i;
+        arr2[count]=s[i];
         count++;
         }
      else {
@@ -30,7 +30,7 @@ int multy =1;
             multy*=10;
         }
      count =0;
-    if (maxitog<max) maxitog=max;
+    if (maxitog<max&&max%2!=0) maxitog=max;
      }}
 
 
