@@ -10,31 +10,27 @@ int multy =1;
     int count =0;
     bool check =0;
     char arr[10]={'0','1','2','3','4','5','6','7','8','9'};
-    int arr2[1000];
-    ifstream F("C:\\Users\\podli\\Desktop\\Инфа_ЕГЭ\\test.txt");
+    ifstream F("C:\\Users\\podli\\Desktop\\Инфа_ЕГЭ\\24-1.txt");
   string s;
   getline( F, s );
-
+//s="543sdfsdafdsh83h48hr87h3478hr87h3487rh348778hr8h3847hr87h348r7h8345";
   for (int i=0; i<s.length();i++){
 
     for (int j=0; j<10; j++){
     if (s[i]==arr[j]){
-        check=1;
-        arr2[count]=s[i];
-        count++;
-        }
-     else {
 
-        for (int k=count-1; k>=0; k--){
-            max+=multy*arr2[k];
-            multy*=10;
-        }
-     count =0;
-    if (maxitog<max&&max%2!=0) maxitog=max;
-     }}
+            check=1;
 
+        max=max*10+s[i]-'0';
+        if (maxitog<max&&max%2!=0) maxitog=max;
+        }}
+     if(check==0) {
+max=0;
 
+     }
+
+check=0;
   }
-  cout << maxitog;
+ cout << maxitog;
     return 0;
 }
