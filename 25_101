@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+bool prost(int x){
+
+if(x==2) return 1;
+for (int i=2; i<=x/2; i++)
+if (x%i==0) return 0;
+return 1;
+}
+
+int main()
+{
+    vector <int> arr(0);
+int second,max;
+int count=0;
+    for (int i=1;i <100000; i++){
+        if(prost(i)) arr.push_back(i);
+
+    }
+
+//cout <<arr.size();
+
+for (int i =125697; i<=190234; i++){
+
+    for (int j =0; j<arr.size(); i++){
+
+        if (i%arr[j]==0){
+            second=i/arr[j];
+            break;
+        }
+    }
+    if (prost(second)){
+        max=i;
+        count++;
+    }
+}
+cout <<count<<' '<< max;
+    return 0;
+}
