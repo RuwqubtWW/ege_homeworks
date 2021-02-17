@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
+using namespace std;
+int main()
+{
+  ifstream Fin("C:\\Users\\podli\\Desktop\\Инфа_ЕГЭ\\26-k1.txt");
+  int k, N, x, max;
+float sum=0;
+  Fin >> N >> k;
+  vector <int> data(N);
+
+  for( int i = 0; i < N; i++ )
+  	Fin >> data[i];
+
+  sort( data.begin(), data.end() );
+  max =data[N-k-1];
+
+for (int i=N-k; i<N; i++){
+       // cout <<data[i]<<endl;
+    sum+=data[i];
+}
+sum*=0.2;
+sum=floor(sum);
+ cout <<max<<' '<<sum;
+}
