@@ -1,34 +1,45 @@
 #include <iostream>
-
+#include <string>
+#include <vector>
 using namespace std;
 
-int f(int x){
-if (x==1||x==2) return 1;
-for (int i=2; i<=x/2;i+=2){
+bool prost(int x){
 
-    if (x%i==0) return 0;
-if (i==2) i++;
-}
+if(x==2) return 1;
+for (int i=2; i<=x/2; i++)
+if (x%i==0) return 0;
 return 1;
 }
 
 int main()
-{   int a=0;
-int   mas =0;
-    int count =0;
-    int max =0;
-    int arr[100000];
+{
+    vector <int> arr(0);
+int second,max;
+int count=0;
+    for (int i=1;i <200000; i++){
+        if(prost(i)) arr.push_back(i);
 
-    for (int k=0; k<200000;k++){
-        if (f(k)) { arr[a]=k; a++; mas++;}
     }
 
-   for (int i=125697; i<=190234; i++){
-        for ( int j = 0; j<mas; j++){
-            if (i%arr[j]==0&&f(i/arr[j])) {count++; max=i;  break;}
+//cout <<arr.size();
+int first=0;
+
+for (int i =125697; i<=190234; i++){
+
+    for (int j =0; j<arr.size(); i++){
+
+        if (i%arr[j]==0){
+            first = arr[j];
+            second=i/arr[j];
+            break;
         }
     }
-    cout <<count<<' '<< max;
+    if (prost(second)){
 
+        max=i;
+        count++;
+    }
+}
+cout <<count<<' '<< max;
     return 0;
 }
