@@ -3,6 +3,7 @@
 #include <fstream>
 #include <algorithm>
 #include <vector>
+#include <cmath>
 int main(){
 using namespace std;
 std::ifstream F("26-J7.txt");
@@ -18,15 +19,27 @@ for (int i=0; i<N;i++){
         F>>x;
     arr[i]=x;
 }
+int sum_all=0;
 
 sort( arr.begin(), arr.end() );
 
-int sum=0;
-
-for (int i=N-1; i>N*4/5; i--){
-    
+for (int i=0; i<N;i++){
+       sum_all+=arr[i];
 }
 
-cout <<N-K-M+1<<' '<<N-K+1;
+int sum_high=0;
+
+for (int i=N-1; i>=N*4/5; i--){
+    sum_high+=arr[i];
+}
+
+float sum_low = sum_all*0.6 - sum_high*0.8;
+
+float p_all;
+
+p_all = sum_low/(sum_all-sum_high);
+
+
+cout <<trunc(sum_high*0.8)<<' '<<trunc(p_all*arr[0]);
 return 0;
 }
