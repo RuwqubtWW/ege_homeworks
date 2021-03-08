@@ -1,0 +1,52 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
+using namespace std;
+
+
+
+
+
+int main()
+{
+
+    int s,n,x;
+     ifstream F("27884.txt");
+     F>>s>>n;
+
+vector <int> arr(n);
+
+    for (int i=0; i<n; i++){
+       F>>arr[i];
+    }
+
+sort(arr.begin(), arr.end());
+
+int sum=0, count =0;
+int stat;
+int max;
+for (int i=0; i<n; i++)
+
+    {
+      if(sum+arr[i]<s)
+    {
+            count++;
+            sum+=arr[i];
+         max=arr[count];
+    } else {stat=sum-arr[count-1];}
+
+     if(i>count)
+      { if (stat+arr[i]<=s){max=arr[i];}
+
+      }
+
+
+    }
+cout<<count<<' '<<max;
+
+
+return 0;
+}
