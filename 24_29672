@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main(){
+
+
+ifstream F("inf_22_10_20_24.txt");
+string s;
+int count=0; int count_e=0;
+int count_a=0;
+
+
+while (!F.eof()){
+getline(F,s);
+
+for (int i=0; i<s.length();i++)
+{
+  if (s[i]=='A') count_a++;
+    if (s[i]=='E') count_e++;
+}
+if (count_e>count_a) count++;
+
+count_a=0;
+count_e=0;
+}
+
+
+cout <<count;
+
+
+
+return 0;
+}
