@@ -1,0 +1,61 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+
+
+ifstream F("test.txt");
+string s;
+int count=-1;
+int count_max=0;
+int count_min=0;
+int n;
+int sum=0;
+
+F>>n;
+vector <int> arr(0);
+
+
+for (int i=0; i<n;i++)
+{ int x;
+  F>>x;
+    if (x<51) sum+=x;
+    else {arr.push_back(x); count++;}
+
+}
+vector <int> arr_max(count);
+vector <int> arr_min(count);
+sort(arr.begin(),arr.end());
+
+
+for (int i=0; i<count;i++)
+{
+  arr_min[i]=arr[i];
+
+}
+
+sort(arr.rbegin(),arr.rend());
+
+for (int i=0; i<count;i++)
+{
+  arr_max[i]=arr[i];
+
+}
+
+for (int i=0; i<count;i++)
+{
+  if (i%2==0)  arr[i]=arr_max[count_max];
+  if (i%2!=0) arr[i]=arr_min[count_min];
+count_max++;
+count_min++;
+cout<<arr[i]<<endl;
+}
+
+
+return 0;
+}
