@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+int count=1;
+long min=1000000000;
+
+for (int i=123456789; i<=223456789; i++){
+        if (round(sqrt(i))==sqrt(i)){
+   for (int j=2; j<sqrt(i); j++){
+
+  if(i%j==0){ count+=2; if(min>j) min=j; }
+  }
+  if (count==3) cout <<i <<' '<<i/min<<endl;
+
+  }
+
+  count =1;
+  }
+
+
+return 0;
+}
