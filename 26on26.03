@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+
+int main(){
+
+ifstream F("test.txt");
+int N,sum,count;
+cin>>N;
+vector <int> arr(0);
+sum=0;
+count=0;
+for (int i=0; i<N;i++){int x;
+cin>>x;
+        if (220>x>210){
+            sum+=x;
+        } else
+    {arr.push_back(x); count++;
+}}
+sort (arr.begin(), arr.end());
+
+for  (int i=0; i<count;i++)
+cout << arr[i];
+
+return 0;
+}
