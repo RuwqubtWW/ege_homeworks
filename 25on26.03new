@@ -21,9 +21,9 @@ for (int i=101000000; i<=102000000; i++){
           if ((i/j)%2==0&&j!=i/j)  count++;
         }
     }
-    if (count>max) max=count;
+    if (count==3) cout <<i<<endl;
     count=0;
 }
-cout <<max;
+
 return 0;
 }
