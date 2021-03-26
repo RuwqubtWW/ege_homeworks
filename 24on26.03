@@ -1,0 +1,34 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+
+int main(){
+
+string s1="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+string s;
+int arr[26]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+ifstream F("test.txt");
+getline (F,s);
+
+
+for (int i=1;i<s.length(); i++){
+    if (s[i-1]=='A'){
+        for (int j=0;j<26; j++){
+            if (s[i]==s1[j]) arr[j]++;
+        }
+    }
+}
+int max=0;
+int a;
+for (int j=0;j<26; j++){
+    if (arr[j]>max) {max=arr[j];a=j;
+
+}}
+cout <<s1[a];
+return 0;
+}
