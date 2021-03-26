@@ -1,0 +1,92 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>#include <cmath>
+using namespace std;
+
+int main(){
+
+
+ifstream F("inf_22_10_20_26 (3).txt");
+string s;
+int count=0;
+int count_max=0;
+int count_min=0;
+int n;
+float sum=0;
+
+F>>n;
+vector <int> arr(0);
+
+
+for (int i=0; i<n;i++)
+{ int x;
+  F>>x;
+    if (x<101) sum+=x;
+    else {arr.push_back(x); count++;}
+
+}
+
+sort(arr.begin(),arr.end());
+
+
+
+
+int max;
+for (int i=0; i<count;i++)
+{
+
+  if (i<count/2)  {sum+=arr[i]*0.7; max=arr[i];}
+  else  sum+=arr[i];
+
+
+}
+
+cout<<ceil(sum)<<' '<<max<<endl;
+return 0;
+}
+#include <cmath>
+using namespace std;
+
+int main(){
+
+
+ifstream F("inf_22_10_20_26 (3).txt");
+string s;
+int count=0;
+int count_max=0;
+int count_min=0;
+int n;
+float sum=0;
+
+F>>n;
+vector <int> arr(0);
+
+
+for (int i=0; i<n;i++)
+{ int x;
+  F>>x;
+    if (x<101) sum+=x;
+    else {arr.push_back(x); count++;}
+
+}
+
+sort(arr.begin(),arr.end());
+
+
+
+
+int max;
+for (int i=0; i<count;i++)
+{
+
+  if (i<count/2)  {sum+=arr[i]*0.7; max=arr[i];}
+  else  sum+=arr[i];
+
+
+}
+
+cout<<ceil(sum)<<' '<<max<<endl;
+return 0;
+}
