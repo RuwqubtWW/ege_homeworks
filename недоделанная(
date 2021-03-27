@@ -1,0 +1,89 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+
+int main(){
+
+
+int N,sum,count;
+ifstream F("test.txt");
+F>>N;
+
+int sum1=0;
+int sum2=0;
+int sum3=0;
+int a,b,c,raz, minraz;
+minraz=100000;
+for (int i=0; i<N;i++){
+F>>a;
+F>>b;
+F>>c;
+
+cout <<i<<endl;
+if (a>=b>=c){
+sum1+=a;
+sum2+=b;
+sum3+=c;
+raz=abs(b-c);
+if (raz<minraz&&raz%2!=0) minraz=raz;
+continue;
+}
+
+if (a>=c>=b){
+sum1+=a;
+sum2+=c;
+sum3+=b;
+raz=abs(b-c);
+if (raz<minraz&&raz%2!=0) minraz=raz;
+continue;
+}
+
+if (b>=a>=c){
+sum1+=b;
+sum2+=a;
+sum3+=c;
+raz=abs(a-c);
+if (raz<minraz&&raz%2!=0) minraz=raz;
+continue;
+}
+
+if (b>=c>=a){
+sum1+=b;
+sum2+=c;
+sum3+=a;
+raz=abs(a-c);
+if (raz<minraz&&raz%2!=0) minraz=raz;
+continue;
+}
+
+if (c>=a>=b){
+sum1+=c;
+sum2+=a;
+sum3+=b;
+raz=abs(b-a);
+if (raz<minraz&&raz%2!=0) minraz=raz;
+continue;
+}
+
+if (c>=b>=a){
+sum1+=c;
+sum2+=b;
+sum3+=a;
+raz=abs(b-a);
+if (raz<minraz&&raz%2!=0) minraz=raz;
+continue;
+}
+ }
+//cout <<sum1<<' '<<sum2<<' '<<sum3;
+if ((sum1+sum2)%2==0) cout <<sum3+minraz<<endl;
+else cout <<sum3<<endl;
+
+
+
+return 0;
+}
