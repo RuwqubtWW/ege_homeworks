@@ -1,0 +1,55 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+
+
+int main(){
+int n,a,b,c,dif;
+int sum1=0;
+int sum2=0;
+int sum3=0;
+int mindif=100000;
+ifstream F("test.txt");
+vector <int> arr3(3);
+
+F>>n;
+
+
+for (int i=0; i<n; i++){
+
+    F>>a;
+    F>>b;
+    F>>c;
+
+    arr3[0]=a;
+    arr3[1]=b;
+    arr3[2]=c;
+
+    sort (arr3.begin(),arr3.end());
+
+if (arr3[1]-arr3[0]%2!=0)
+    dif=arr3[1]-arr3[0];
+else
+    dif=arr3[2]-arr3[0];
+
+if (dif%2!=0&&dif<mindif)
+    mindif=dif;
+
+sum1+=arr3[0];
+sum2+=arr3[1];
+sum3+=arr3[2];
+
+}
+
+//cout <<sum1<<' '<<sum2<<' '<<sum3<<' '<<mindif;
+if ((sum2+sum3)%2==0)
+    sum1+=mindif;
+
+cout <<sum1;
+return 0;
+}
