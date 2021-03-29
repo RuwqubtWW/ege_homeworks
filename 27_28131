@@ -1,0 +1,59 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+
+
+int main(){
+int n,x,a,ost;
+
+int max=0;
+int max1=0;
+int max2=0;
+int max1_loc=0;
+int max2_loc=0;
+int max_loc=0;
+ifstream F("test.txt");
+
+F>>n;
+int arr[n];
+int arr_ost[n];
+
+for (int i=0; i<n; i++)
+    arr[i]=0;
+
+for (int i=0; i<n; i++){
+    F>>x;
+        arr_ost[i]=x%120;
+        arr[i]=x;
+}
+
+for (int i=0; i<n; i++)
+{
+    a=arr[i];
+    ost=a%120;
+      for (int k=i+1; k<n; k++)
+    {
+        if ((ost+arr_ost[k])%120==0&&(ost+arr_ost[k])>max_loc&&arr[i]>arr[k])
+            {
+                max_loc=arr[i]+arr[k];
+                max1_loc=arr[i];
+                max2_loc=arr[k];
+            }
+    }
+    if (max_loc>max)
+            {
+            max=max_loc;
+            max1=max1_loc;
+            max2=max2_loc;
+            }
+}
+
+cout <<max1<<' '<<max2;
+
+return 0;
+}
