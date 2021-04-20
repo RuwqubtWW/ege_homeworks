@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+
+
+int main(){
+int max;
+string s;
+ifstream F("test.txt");
+getline(F,s);
+int count =0;
+max=1;
+for (int i=0; i<=s.length(); i++){
+    if (s[i]=='Y') count++;
+    else count=0;
+    if (count>max) max=count;
+}
+cout<<max;
+return 0;
+}
+
