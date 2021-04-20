@@ -1,0 +1,41 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+
+
+int main(){
+    int x,n;
+    int sum=0;
+    int max17c =0;
+    int max17n =0;
+    int maxc =0;
+    int maxn =0;
+ifstream F("test.txt");
+
+F>>n;
+
+
+for (int i=0; i<n; i++){
+    F>>x;
+    if (x%17==0){
+        if (x%2==0&&max17c<x) {max17c=x; continue;}
+        if (x%2!=0&&max17n<x) {max17n=x;  continue;}
+    }
+
+    if (x%2==0&&maxc<x)     {maxc=x;  continue;}
+        if (x%2!=0&&maxn<x) {maxn=x;  continue;}
+}
+if (max17c==0&&max17n==0) cout <<max17c<<' '<<max17n;
+else{
+if (max17c+maxc>max17n+maxn) cout <<max17c<<' '<<maxc;
+else cout <<max17n<<' '<<maxn;}
+
+
+return 0;
+}
+
