@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+
+
+
+int main(){
+    int S,n,x;
+    int sum=0;
+    int counti;
+    int max;
+ifstream F("test.txt");
+F>>S;
+F>>n;
+vector <int> arr(n);
+
+for (int i=0; i<n; i++){
+    F>>arr[i];
+}
+
+sort(arr.begin(), arr.end());
+
+for (int i=0; i<n; i++){
+    if (arr[i]+sum<=S) {sum+=arr[i]; counti=i+1;}
+}
+    sum=sum-arr[counti-1];
+
+for (int i=0; i<n; i++){
+    if (sum+arr[i]<=S) max=arr[i];
+}
+cout<<counti<<' '<<max;
+return 0;
+}
+
