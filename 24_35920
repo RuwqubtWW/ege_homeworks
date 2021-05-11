@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <Windows.h>
+
+using namespace std;
+
+
+int main () {
+int max=0;
+int count=0;
+fstream F("test.txt");
+string s;
+setlocale(LC_ALL, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+getline(F,s);
+cout <<s;
+for (int i=0; i<s.length(); i++){
+
+    if (s[i]=='К'&&s[i+1]=='О'&&s[i+2]=='Т'){
+        count++;
+        if (count>max) max=count;}
+        else count=0;
+
+}
+cout <<max;
+return 0;
+}
