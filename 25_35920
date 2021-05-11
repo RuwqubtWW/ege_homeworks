@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <Windows.h>
+
+using namespace std;
+
+bool f(int x){
+    int check=0;
+for (int k=2; k<=ceil(sqrt(x)); k++){
+    if (x%k==0) check++;
+}
+if (check==0) return 1;
+else return 0;
+}
+int main () {
+
+int count=0;
+
+for (int i =3144472; i<=3144600; i++){
+if (f(i)){
+    count++;
+    cout <<count <<' '<<i<<endl;
+}
+}
+return 0;
+}
