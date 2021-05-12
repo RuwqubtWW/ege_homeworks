@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <Windows.h>
+
+using namespace std;
+
+int main () {
+    int s,n,a,b,d,last;
+    int count =0;
+    int maxsum=0;
+    int minsum=0;
+    int mind=10000;
+    int arr[10];
+fstream F("test.txt");
+F>>n;
+
+for (int i=0;i<10;i++) arr[i]=10000;
+for (int i =0; i<n; i++){
+    F>>a;
+    F>>b;
+    if (a>b) {maxsum+=a; minsum+=b; d=a-b;}
+    else {maxsum+=b; minsum+=a; d=b-a;}
+    if (d<arr[d%10]) arr[d%10] = d;
+}
+
+last=maxsum%10;
+
+cout<<last<<' '<<minsum<<endl;
+for (int i=0; i<10; i++){
+    cout<<i<<": "<<arr[i]<<endl;
+}
+
+return 0;
+}
