@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <algorithm>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+int main(){
+
+fstream F("test.txt");
+int arr[1000];
+int count=0;
+
+for (int i=0; i<1000; i++){
+    F>>arr[i];
+}
+
+for (int i=0; i<1000; i++){
+    for (int k=1; k<7;k++){
+        if ((arr[i]+arr[i+k])%2==0&&arr[i]<10000&&arr[i+k]<10000&&arr[i]!=0&&arr[i+k]!=0) {count++; cout <<arr[i]<<' '<<arr[i+k]<<endl;
+}}
+
+
+}
+cout <<count;
+return 0;
+}
