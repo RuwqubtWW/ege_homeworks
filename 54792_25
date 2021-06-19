@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <cmath>
+#include <algorithm>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+bool F(int x){
+int a=0;
+if (x==2) return 1;
+for (int k=2; k<x; k++)
+    if (x%k==0) a++;
+    if (a==0) return 1;
+    else return 0;
+}
+
+int main() {
+int count=0;
+for (int i=5962464; i<=5962581; i++){
+    if (F(i)){count++; cout<<count<<' '<<i<<endl;}
+}
+
+return 0;
+}
